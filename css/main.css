@@ -116,6 +116,7 @@ a {
 body {
     font-family: 'Open Sans', sans-serif;
     background: var(--body-color);
+    
 }
 
 /* Start Navbar */
@@ -410,7 +411,7 @@ body {
 /***** Section loading *****/
 
 .loading-page {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
