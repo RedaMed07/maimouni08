@@ -1,22 +1,119 @@
-/* :root {
-    --dark-color: #b7d2f7;
-    --green-color: #000000;
-    --red-color: #ff3150;
-    --yellow-color: #ffc400;
-    --white-color: #3c3c3c;
-    --section-color: #eff7fa;
+:root {
+    --body-color: #F4F5F8;
+    --container-color: #FEFEFE;
+    --main-color: #C99E7C;
+    --light-main: #d27a36b6;
+    /* for buttons */
+    --first-color: #fff;
+    --secondary-color: #5E6F7E;
 
-    --dark-blue: #040946;
-    --orange-color: #F48015;
-} */
+    /* for texts */
+    --text-color: #4D5F71;
+    --paragraph-color: #8F9BA5;
 
+    /* Main Padding */
+    --mainPadding: 90px;
+
+}
+
+.dark-theme {
+    --body-color: #222332;
+    --container-color: #2A2B3F;
+    --main-color: #c99e7c;
+
+    /* for buttons */
+    --first-color: #fff;
+    --secondary-color: #DADAEB;
+
+    /* for texts */
+    --text-color: #DADAEB;
+    --paragraph-color: #A7A7B8;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--body-color);
+    
+}
+/* Start Component */
+.header-text {
+    text-align: center;
+    position: relative;
+    margin-bottom: 4rem;
+    padding-bottom: .5rem;
+}
+.header-text::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: var(--main-color);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 767px) {
+    .header-text::before{
+        width: 86px;
+    }
+}
+.header-text h2 {
+    color: var(--main-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.header-text h2::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--paragraph-color);
+    left: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-text h2::after {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--paragraph-color);
+    right: -15%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header-text p {
+    color: var(--paragraph-color);
+    position: relative;
+    top: 3px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+@media (max-width: 767px) {
+    .header-text h2 {
+        /* color: var(--text-color); */
+        font-size: 1.8rem;
+    }
+}
+
+/* End Component */
 /* Start Global Rules */
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* border: none; */
 }
 
 html {
@@ -42,6 +139,11 @@ ul {
 
 a {
     text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
 }
 
 .container,
@@ -81,43 +183,6 @@ a {
 
 /* End Global Rules */
 
-:root {
-    --body-color: #F4F5F8;
-    --container-color: #FEFEFE;
-    --main-color: #C99E7C;
-    --light-main: #d27a36b6;
-    /* for buttons */
-    --first-color: #fff;
-    --secondary-color: #5E6F7E;
-
-    /* for texts */
-    --text-color: #4D5F71;
-    --paragraph-color: #8F9BA5;
-
-    /* Main Padding */
-    --mainPadding: 90px;
-
-}
-
-.dark-theme {
-    --body-color: #222332;
-    --container-color: #2A2B3F;
-    --main-color: #c99e7c;
-
-    /* for buttons */
-    --first-color: #fff;
-    --secondary-color: #DADAEB;
-
-    /* for texts */
-    --text-color: #DADAEB;
-    --paragraph-color: #A7A7B8;
-}
-
-body {
-    font-family: 'Open Sans', sans-serif;
-    background: var(--body-color);
-    
-}
 
 /* Start Navbar */
 .navbar {
@@ -395,15 +460,6 @@ body {
 .landing .custom-container .side-image {
     flex: 1;
 }
-/* @media (max-width:767px) {
-    .landing .custom-container .side-image {
-        background: var(--container-color);
-    }
-} */
-.landing .custom-container .side-image img {
-    display: block;
-    max-width: 100%;
-}
 
 /* End Main Landing */
 
@@ -430,8 +486,8 @@ body {
   }
   
   #svg {
-    height: 150px;
-    width: 150px;
+    height: 400px;
+    width: 400px;
     stroke: white;
     fill-opacity: 0;
     stroke-width: 3px;
@@ -521,22 +577,30 @@ cursor: pointer;
     padding: .75rem;
 }
 
-.features .box .content {
-
-}
 .features .box .content h3{
-    color: var(--text-color);
+       color: var(--text-color);
     margin-bottom: 1rem;
     font-size: 1.2rem;
     text-transform: uppercase;
 }
 @media (min-width: 768px) and (max-width: 1199px) {
-    .features .box .content h3{
+    /* edited  */
+    .features .box {
+        padding: 2.5rem .5rem 1rem;
+    }
+
+    .features .box .content h3 {
         font-size: .738rem;
         font-weight: bold;
     }
-    .features .box .content p{
+
+    .features .box .content p {
         font-size: .72rem;
+    }
+
+    /* edited */
+    .features .box .icon i {
+        font-size: 1.2rem;
     }
 }
 .features .box .content p{
@@ -559,3 +623,63 @@ cursor: pointer;
     }
 }
  /***** End Features *****/
+
+ /* Start Top Sales */
+ .top-sales {
+    padding-bottom: var(--mainPadding);
+    /* background-color: red; */
+ }
+ .top-sales .row {
+    row-gap: 1rem;
+ }
+ .top-sales .card {
+    background: var(--container-color);
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: rgba(93, 91, 91, 0.159) 0px 8px 24px;
+    flex: 1;
+    transition: ease .3s ;
+ }
+ .top-sales .card:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+
+ }
+ .top-sales .product-img {
+    border-radius: 18px;
+ }
+ .top-sales .product-infos h5{
+    color: var(--text-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+ }
+ .top-sales .product-infos p {
+    color: var(--paragraph-color);
+    margin-bottom: 0.5rem;
+ }
+ .top-sales .product-price {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-sales .product-price p:first-child{
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color:var(--main-color) ;
+}
+.top-sales .product-price p:nth-child(2){
+    color: var(--paragraph-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+.top-sales .card-actions a{
+    font-size: 1.25rem;
+    color: var(--main-color);
+}
+.top-sales .stars {
+    color: var(--main-color);
+    font-size: 1.25rem;
+}
+ /* End Top Sales */

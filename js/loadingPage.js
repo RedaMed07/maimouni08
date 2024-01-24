@@ -23,4 +23,3 @@ gsap.fromTo(
       delay: 0.5,
     }
   );
-  console.log('HIHI');
