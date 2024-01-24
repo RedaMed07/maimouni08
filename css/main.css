@@ -675,6 +675,9 @@ cursor: pointer;
     margin-bottom: 0.2rem;
 }
 .top-sales .card-actions a{
+    font-size: 1.54rem;
+}
+.top-sales .card-actions a{
     font-size: 1.25rem;
     color: var(--main-color);
 }
