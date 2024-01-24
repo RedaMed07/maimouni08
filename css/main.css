@@ -674,14 +674,17 @@ cursor: pointer;
     font-weight: 600;
     margin-bottom: 0.2rem;
 }
-.top-sales .card-actions a{
-    font-size: 1.54rem;
+.top-sales .cardfooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-.top-sales .card-actions a{
-    font-size: 1.25rem;
+
+.top-sales .cardfooter .card-actions a{
+    font-size: 1.65rem;
     color: var(--main-color);
 }
-.top-sales .stars {
+.top-sales .cardfooter .stars {
     color: var(--main-color);
     font-size: 1.25rem;
 }
