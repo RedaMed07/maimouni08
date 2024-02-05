@@ -1,0 +1,59 @@
+:root {
+    --body-color: #F4F5F8;
+    --container-color: #FEFEFE;
+    --main-color: #C99E7C;
+    --light-main: #d27a36b6;
+    /* for buttons */
+    --first-color: #fff;
+    --secondary-color: #5E6F7E;
+
+    /* for texts */
+    --text-color: #4D5F71;
+    --paragraph-color: #8F9BA5;
+
+    /* Main Padding */
+    --mainPadding: 90px;
+
+}
+.single-product {
+    padding-block: calc(var(--mainPadding) / 2);
+}
+.small-img-group {
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+.card-product{
+    padding: 10px;
+    background: var(--container-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(3.1px);
+    -webkit-backdrop-filter: blur(3.1px);
+    border: 1px solid rgba(243, 241, 241, 0.33);
+}
+.card-product .main-img{
+    border-radius: 12px;
+    padding-bottom: 10px;
+}
+
+.small-img-col img {
+    border-radius: 10px;
+}
+
+
+.card-product-info{
+    padding: 10px ;
+}
+
+.card-product-info-header-right{
+    padding: 10px;
+    border-right: var(--main-color) solid 2px;
+}
+
