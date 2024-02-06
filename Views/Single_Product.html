@@ -96,19 +96,19 @@
             <div class="row row-gap-5">
                 <div class="col-lg-6 col-md-6 col-sm-12 card-product">
 
-                    <img src="../assets/accessories/photo2.jpg" class="img-fluid w-100 pb-2 main-img">
+                    <img src="../assets/accessories/photo2.jpg" class="img-fluid w-100 pb-2 main-img" id="main-img">
                     <div class="small-img-group">
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo1.png" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo3.jpg" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo4.png" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo5.png" width="100%" class="small-img">
                         </div>
                     </div>
 
@@ -319,9 +319,7 @@
     <!-- End Products -->
 
 
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <!-- <div class=" container my-5"> -->
-
+    <!-- Start Footer -->
     <footer class="text-center text-lg-start mb-3">
         <!-- Grid container -->
         <div class="container p-4">
@@ -413,15 +411,9 @@
             </div>
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-
-        <!-- Copyright -->
     </footer>
+    <!-- End Footer -->
 
-    <!-- </div> -->
-    <!-- End of .container -->
-    <!-- ========== End Section ========== -->
 
 
 
@@ -433,6 +425,18 @@
         integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/loadingPage.js"></script>
+    <script>
+        var mainImg = document.getElementById('main-img');
+        var smallImg = document.getElementsByClassName('small-img');
+
+        for (let i = 0; i < 4; i++) {
+            smallImg[i].onclick = function () {
+                let imgSrc = mainImg.src;
+                mainImg.src = smallImg[i].src;
+                smallImg[i].src = imgSrc;
+            }
+        }
+    </script>
 </body>
 
 </html>
