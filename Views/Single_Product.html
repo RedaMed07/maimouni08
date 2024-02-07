@@ -96,58 +96,72 @@
             <div class="row row-gap-5">
                 <div class="col-lg-6 col-md-6 col-sm-12 card-product">
 
-                    <img src="../assets/accessories/photo2.jpg" class="img-fluid w-100 pb-2 main-img">
+                    <img src="../assets/accessories/photo2.jpg" class="img-fluid w-100 pb-2 main-img" id="main-img">
                     <div class="small-img-group">
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo1.png" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo3.jpg" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo4.png" width="100%" class="small-img">
                         </div>
                         <div class="small-img-col">
-                            <img src="../assets/accessories/photo2.jpg" width="100%" class="small-img">
+                            <img src="../assets/accessories/photo5.png" width="100%" class="small-img">
                         </div>
                     </div>
 
                 </div>
+
                 <div class="col-lg-6 col-md-6 col-sm-12 card-product-info">
                     <div class="card-product-info-header">
                         <div class="d-flex w-100 align-items-center ">
-                            <h3 class="mb-0">BALTSAR Chair</h3><span class="badge rounded-pill bg-success ms-3">On
+                            <h3 class="mb-0">Carmen Douce King Cube</h3><span
+                                class="badge rounded-pill bg-success ms-3">On
                                 Stock</span>
                         </div>
-                        <small>Swivel chair, black</small>
+                        <small>3 Pieces Black Color</small>
                     </div>
-                    <div class="card-product-info-content">
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Possimus beatae excepturi facilis
-                            et laborum nostrum autem aut rerum labore nesciunt. Earum optio natus mollitia, quod aliquam
-                            sint, iure amet doloribus quibusdam, et accusamus autem voluptates pariatur porro eum velit
-                            aspernatur.</p>
+                    <div class="card-product-info-content-container">
+                        <div class="card-product-info-content">
 
-                    </div>
+                            <p>Plongez dans l'élégance contemporaine avec l'ensemble "Carmen Douce King Cube" de trois
+                                pièces, dans une couleur noire sophistiquée. Ces cubes royaux offrent une fusion
+                                parfaite de fonctionnalité et de style, ajoutant une touche moderne à votre espace.
 
-                    <div class="row">
-                        <div class="col-6 ">
-                            <div class="card-product-info-header-right">
-                                <h3>1750 Dhs</h3>
-                                <p><small>175 </small>$</p>
-                                <p><small><del>150</del></small>$</p>
+                                Le design épuré et minimaliste de ces pièces les rend polyvalentes, parfaites pour tout
+                                type de décoration intérieure. Que ce soit dans le salon, sur un meuble TV ou dans la
+                                chambre à coucher, l'ensemble "Carmen Douce King Cube" offre une solution élégante pour
+                                organiser et présenter vos objets préférés.
+
+                                La couleur noire profonde ajoute une note de chic contemporain, tandis que la forme
+                                cubique apporte une esthétique moderne. Ces pièces se marient harmonieusement avec
+                                divers styles décoratifs, apportant une touche d'élégance à chaque coin de votre maison.
+                                Transformez votre espace avec cet ensemble polyvalent, où le design et la fonction se
+                                rencontrent avec sophistication.</p>
+
+                        </div>
+                        <a class="btn btn-link p-0 pt-2 read-btn" onclick="showMore()">Read More</a>
+                        <div class="row">
+                            <div class="col-6 ">
+                                <div class="card-product-info-header-right">
+                                    <strong class="fs-2">1750 <small>Dhs</small><small
+                                            class="ms-2"><del>150</del></small>Dhs</strong>
+                                    <div class="prices"><strong class="fs-2">175</strong><strong>$</strong> </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="card-product-info-header-left">
+                                    <a class="btn btn-outline-primary rounded rounded-pill w-75 "> Order <i
+                                            class="ri-shopping-cart-2-line"></i></a>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6">
-                            <div class="card-product-info-header-left">
-                                <a class="btn btn-outline-primary rounded rounded-pill w-75 "> Order <i
-                                        class="ri-shopping-cart-2-line"></i></a>
-                            </div>
-                        </div>
                     </div>
+
                 </div>
-
             </div>
-        </div>
 
     </section>
     <!-- End Product Section -->
@@ -319,9 +333,7 @@
     <!-- End Products -->
 
 
-    <!-- Remove the container if you want to extend the Footer to full width. -->
-    <!-- <div class=" container my-5"> -->
-
+    <!-- Start Footer -->
     <footer class="text-center text-lg-start mb-3">
         <!-- Grid container -->
         <div class="container p-4">
@@ -413,15 +425,34 @@
             </div>
         </div>
         <!-- Grid container -->
-
-        <!-- Copyright -->
-
-        <!-- Copyright -->
     </footer>
+    <!-- End Footer -->
+    <script>
+        var mainImg = document.getElementById('main-img');
+        var smallImg = document.getElementsByClassName('small-img');
 
-    <!-- </div> -->
-    <!-- End of .container -->
-    <!-- ========== End Section ========== -->
+        for (let i = 0; i < 4; i++) {
+            smallImg[i].onclick = function () {
+                let imgSrc = mainImg.src;
+                mainImg.src = smallImg[i].src;
+                smallImg[i].src = imgSrc;
+            }
+        }
+
+        function showMore() {
+            var content = document.querySelector('.card-product-info-content');
+            var button = document.querySelector('.read-btn');
+
+            content.classList.toggle('show-all');
+
+            if (content.classList.contains('show-all')) {
+                button.textContent = 'Read Less';
+            } else {
+                button.textContent = 'Read More';
+            }
+        }
+
+    </script>
 
 
 
@@ -433,6 +464,7 @@
         integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/loadingPage.js"></script>
+
 </body>
 
 </html>
