@@ -426,33 +426,10 @@
         </div>
         <!-- Grid container -->
     </footer>
-    <!-- End Footer -->
-    <script>
-        var mainImg = document.getElementById('main-img');
-        var smallImg = document.getElementsByClassName('small-img');
 
-        for (let i = 0; i < 4; i++) {
-            smallImg[i].onclick = function () {
-                let imgSrc = mainImg.src;
-                mainImg.src = smallImg[i].src;
-                smallImg[i].src = imgSrc;
-            }
-        }
-
-        function showMore() {
-            var content = document.querySelector('.card-product-info-content');
-            var button = document.querySelector('.read-btn');
-
-            content.classList.toggle('show-all');
-
-            if (content.classList.contains('show-all')) {
-                button.textContent = 'Read Less';
-            } else {
-                button.textContent = 'Read More';
-            }
-        }
-
-    </script>
+    <!-- </div> -->
+    <!-- End of .container -->
+    <!-- ========== End Section ========== -->
 
 
 
@@ -464,7 +441,6 @@
         integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="../js/loadingPage.js"></script>
-
 </body>
 
 </html>
