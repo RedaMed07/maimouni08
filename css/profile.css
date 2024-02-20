@@ -15,31 +15,34 @@
     --mainPadding: 90px;
 
 }
-.login {
+.profile {
     padding: calc(var(--mainPadding) / 2) 0;
 }
-@media (max-width: 767px) {
-    .login {
-        padding-top: 20px;
-    }
-}
-.login-container {
-    background: var(--container-color);
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-}
-.login-container .header-title h4 {
+
+.profile .header-title h4 {
     color: var(--text-color);
 }
-.login-container form label {
+.profile form label {
     color: var(--text-color);
 }
-.login-container form input,
-.login-container form input:focus {
+.profile form input,
+.profile form input:focus {
     color: var(--text-color);
     background-color: var(--container-color);
 }
-.login-container form input::placeholder {
+.profile form input::placeholder {
     color: var(--paragraph-color);
     font-size: .90rem;
 }
+.account-info {
+    border-right: 5px solid var(--paragraph-color);
+}
+@media (max-width:767px){
+    .account-info {
+        border-right: none;
+    }
+}
 
+.profile .information {
+    color: var(--text-color);
+}
