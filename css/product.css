@@ -23,6 +23,7 @@
         padding-top: 20px;
     }
 }
+
 .small-img-group {
 
     display: flex;
@@ -59,9 +60,7 @@
 .card-product-info{
     padding: 10px ;
 }
-.order-now {
-    
-}
+
 .single_product_stars span{
     color: var(--main-color);
 }
@@ -107,3 +106,19 @@
     color: var(--text-color);
 }
 /* end */
+/* Start Reviews */
+.reviews {
+    padding-block: calc(var(--mainPadding) / 2);
+}
+@media (max-width: 767px) {
+    .reviews {
+        padding-top: 20px;
+    }
+}
+.my-row .content h4{
+    color: var(--text-color);
+}
+.my-row .content p{
+    color: var(--paragraph-color);
+}
+/* End Reviews */
