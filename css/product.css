@@ -59,13 +59,13 @@
 .card-product-info{
     padding: 10px ;
 }
-
-.card-product-info-header-right{
-    padding: 10px 0;
-    border-right: var(--main-color) solid 2px;
+.order-now {
+    
 }
-
-/* prosuct header */
+.single_product_stars span{
+    color: var(--main-color);
+}
+/* product header */
 
 .card-product-info-header h3{
  color: var(--text-color);
@@ -73,7 +73,14 @@
 .card-product-info-header small{
  color: var(--text-color);
 }
-
+@media (max-width:767px){
+    .my-row {
+        flex-wrap: wrap;
+    }
+}
+.card-review {
+    width: 98%;
+}
 .card-product-info-content {
     overflow: hidden;
     max-height: 95px; /* Adjust as per your need */
